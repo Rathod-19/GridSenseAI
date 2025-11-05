@@ -2,5 +2,5 @@
   publish = "."
 
 [build.environment]
-  # Use uv, which respects pyproject.toml
-  PIP_VERSION = "uv"
+  # Explicitly set the Python version to a supported one.
+  PYTHON_VERSION = "3.11"
