@@ -1,15 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt && bash setup.sh"
-  publish = "static" # A dummy directory, can be empty
+  command = "pip install -r requirements.txt"
 
 [build.environment]
   # Explicitly set the Python version to a supported one.
   PYTHON_VERSION = "3.11"
-
-[functions]
-  directory = "netlify/functions"
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/streamlit"
-  status = 200
