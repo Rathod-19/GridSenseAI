@@ -1,14 +1,15 @@
 [build]
-  command = "pip install -r requirements.txt"
-  publish = "." # Publish the root, though it won't be served statically
+  command = "pip install -r requirements.txt && bash setup.sh"
+  publish = "static" # A dummy directory, can be empty
 
 [build.environment]
   # Explicitly set the Python version to a supported one.
   PYTHON_VERSION = "3.11"
 
-[dev]
-  command = "streamlit run app.py"
-
 [functions]
   directory = "netlify/functions"
-  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/streamlit"
+  status = 200
