@@ -1,2 +1,6 @@
 [build]
   publish = "."
+
+[build.environment]
+  # Use uv, which respects pyproject.toml
+  PIP_VERSION = "uv"
