@@ -1,6 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt && mkdir static"
-  publish = "static"
+  command = "pip install -r requirements.txt"
+  publish = "." # Publish the root, though it won't be served statically
 
 [build.environment]
   # Explicitly set the Python version to a supported one.
